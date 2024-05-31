@@ -2,9 +2,9 @@
 
 namespace controleRemoto
 {
-     // A "abstração" define a interface para a parte "controle" das duas hierarquias de 
-     // classe. Ela mantém uma referência a um objeto da hierarquia de "implementação" e 
-     // delega todo o trabalho real para esse objeto.
+    // A "abstração" define a interface para a parte "controle" das duas hierarquias de 
+    // classe. Ela mantém uma referência a um objeto da hierarquia de "implementação" e 
+    // delega todo o trabalho real para esse objeto.
 
     public class RemoteControl
     {
