@@ -45,19 +45,34 @@
                 {
                     case "1":
                         gerenciador.Ligar();
-                        Console.WriteLine($"Ligou!");
+                        bool statusLigar;
+                        if (veiculo == "moto")
+                        {
+                            statusLigar = moto.EstaLigado();
+                            if (!statusLigar)
+                                Console.WriteLine("Ligou!");
+                            else
+                                Console.WriteLine("A moto ja está ligada!");
+                        }
+
+                        if (veiculo == "carro")
+                        {
+                            statusLigar = carro.EstaLigado();
+                            if (!statusLigar)
+                                Console.WriteLine("Ligou!");
+                            else
+                                Console.WriteLine("O carro ja está ligada!");
+                        }
                         break;
 
                     case "2":
-
+                        bool statusDesligado;
                         gerenciador.Desligar();
-
-                        bool status;
 
                         if (veiculo == "moto")
                         {
-                            status = moto.EstaLigado();
-                            if (!status)
+                            statusDesligado = moto.EstaLigado();
+                            if (!statusDesligado)
                                 Console.WriteLine("Desligou!");
                             else
                                 Console.WriteLine("Não foi possível desligar, pois o veículo está em movimento");
@@ -65,8 +80,8 @@
 
                         if (veiculo == "carro")
                         {
-                            status = carro.EstaLigado();
-                            if (!status)
+                            statusDesligado = carro.EstaLigado();
+                            if (!statusDesligado)
                                 Console.WriteLine("Desligou!");
                             else
                                 Console.WriteLine("Não foi possível desligar, pois o veículo está em movimento");
@@ -76,37 +91,26 @@
                     case "3":
                         gerenciador.Acelerar();
                         if (veiculo == "moto")
-                        {
                             Console.WriteLine($"Você está a {moto.PegarVelocidade()} km por hora");
-                        }
                         else
-                        {
-                            Console.WriteLine($"Você está a {carro.PegarVelocidade()} km por hora");
-                        }
 
+                            Console.WriteLine($"Você está a {carro.PegarVelocidade()} km por hora");
                         break;
+
                     case "4":
                         gerenciadorAvancado.AtivarTurbo();
                         if (veiculo == "moto")
-                        {
                             Console.WriteLine($"Você está a {moto.PegarVelocidade()} km por hora");
-                        }
                         else
-                        {
                             Console.WriteLine($"Você está a {carro.PegarVelocidade()} km por hora");
-                        }
                         break;
 
                     case "5":
                         gerenciador.Frear();
                         if (veiculo == "moto")
-                        {
                             Console.WriteLine($"Você está a {moto.PegarVelocidade()} km por hora");
-                        }
                         else
-                        {
                             Console.WriteLine($"Você está a {carro.PegarVelocidade()} km por hora");
-                        }
                         break;
 
                     case "0":
@@ -123,5 +127,4 @@
             } while (sair != true);
         }
     }
-
 }
